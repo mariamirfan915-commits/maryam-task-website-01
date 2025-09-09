@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreatZone</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Inter", sans-serif;
+      background: #F9F9F9;
+      color: #2D3748;
+    }
+    header {
+      width: 100%;
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      flex-wrap: wrap;
+    }
+    #heading {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    nav ul li {
+      text-transform: capitalize;
+      font-weight: 500;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    nav ul li img {
+      width: 20px;
+      height: 20px;
+    }
+    /* Hero Section */
+    .hero-content {
+      width: 85%;
+      margin: 60px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .hero-left {
+      flex: 1;
+      min-width: 280px;
+    }
+    .hero-left h1 {
+      font-size: 52px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .hero-left p {
+      font-size: 22px;
+      color: #555;
+    }
+    .hero-right {
+      flex: 1;
+      text-align: center;
+    }
+    .hero-right img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 20px;
+    }
+    /* Featured Section */
+    .featured, .featured-second {
+      width: 85%;
+      margin: 50px auto;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      flex-wrap: wrap;
+    }
+    .featured-text {
+      flex: 1;
+      min-width: 260px;
+    }
+    .featured-text h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .featured-text p {
+      margin-bottom: 10px;
+      color: #555;
+    }
+    .date {
+      font-size: 13px;
+      color: #718096;
+    }
+    .featured-text a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #2D3748;
+    }
+    .featured-img {
+      flex: 1;
+      min-width: 260px;
+      text-align: center;
+    }
+    .featured-img img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 12px;
+    }
+    /* Blog Grid */
+    .blog-grid {
+      width: 85%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      height: 160px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .card p {
+      margin: 8px 0;
+      font-size: 14px;
+      color: #555;
+    }
+    .card a {
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 13px;
+      color: #2D3748;
+    }
+    /* Footer */
+    footer {
+      margin-top: 50px;
+      padding: 20px 8%;
+      background: #fff;
+      border-top: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    footer .social {
+      display: flex;
+      gap: 15px;
+    }
+    footer .social img {
+      width: 20px;
+      height: 20px;
+    }
+    .see-more {
+      text-align: center;
+      margin: 30px;
+    }
+    .see-more button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #6B46C1;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    /* RESPONSIVE MEDIA QUERIES */
+    @media (max-width: 768px) {
+      .hero-left h1 {
+        font-size: 36px;
+      }
+      .hero-left p {
+        font-size: 18px;
+      }
+      .featured, .featured-second {
+        flex-direction: column;
+        text-align: center;
+      }
+      .featured-text, .featured-img {
+        text-align: center;
+      }
+      nav ul {
+        gap: 15px;
+        font-size: 13px;
+      }
+    }
+    @media (max-width: 500px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      nav ul {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-left h1 {
+        font-size: 28px;
+      }
+      .hero-left p {
+        font-size: 16px;
+      }
+      .see-more button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h3 id="heading">GreatZone</h3>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>Posts</li>
+        <li><img src="../WAS/assets/twitter.png" alt=""></li>
+        <li><img src="../WAS/assets/instagram.png" alt=""></li>
+        <li><img src="../WAS/assets/linkedin.png" alt=""></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Hero Section -->
+  <section class="hero-content">
+    <div class="hero-left">
+      <h1>Make Zone Better !</h1>
+      <p>Why Better Zone Important ?</p>
+    </div>
+    <div class="hero-right">
+      <img src="../WAS/assets/bg.png" alt="">
+    </div>
+  </section>
+  <!-- Featured -->
+  <section class="featured">
+    <div class="featured-text">
+      <h2>long established</h2>
+      <p>It is a long established fact that a reader will be distracted by the readable content...</p>
+      <p class="date">May 20th 2020</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="featured-img">
+      <img src="../WAS/assets/bg2.png" alt="">
+    </div>
+  </section>
+  <!-- Blog Grid -->
+  <section class="blog-grid">
+    <div class="card">
+      <img src="../WAS/assets/bg3.png" alt="">
+      <h3>long established</h3>
+      <p>It is a long established fact that a reader will be distracted...</p>
+      <p class="date">May 20th 2020</p>
+      <a href="#">Read more</a>
+    </div>
+    <div class="card">
+      <img src="../WAS/assets/bg4.png" alt="">
+      <h3>long established</h3>
+      <p>It is a long established fact that a reader will be distracted...</p>
+      <p class="date">May 20th 2020</p>
+      <a href="#">Read more</a>
+    </div>
+    <div class="card">
+      <img src="../WAS/assets/bg5.png" alt="">
+      <h3>long established</h3>
+      <p>It is a long established fact that a reader will be distracted...</p>
+      <p class="date">May 20th 2020</p>
+      <a href="#">Read more</a>
+    </div>
+  </section>
+  <!-- Featured Second -->
+  <section class="featured-second">
+    <div class="featured-text">
+      <h2>What is Lorem Ipsum?</h2>
+      <p>It is a long established fact that a reader will be distracted by the readable content...</p>
+      <p class="date">May 20th 2020</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="featured-img">
+      <img src="../WAS/assets/bg6.png" alt="">
+    </div>
+  </section>
+  <!-- See More -->
+  <div class="see-more">
+    <button>See more</button>
+  </div>
+  <!-- Footer -->
+  <footer>
+    <p>GreatZone 2022 copyright all rights reserved</p>
+    <div class="social">
+      <img src="../WAS/assets/twitter.png" alt="">
+      <img src="../WAS/assets/instagram.png" alt="">
+      <img src="../WAS/assets/linkedin.png" alt="">
+    </div>
+  </footer>
+</body>
+</html>
